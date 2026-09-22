@@ -93,6 +93,22 @@ SENSOR_DESCRIPTIONS: tuple[VictronSensorDescription, ...] = (
         value_fn=lambda c: c.telemetry.l1_power,
     ),
     VictronSensorDescription(
+        key="l2_power",
+        name="L2 Power",
+        native_unit_of_measurement=UnitOfPower.WATT,
+        device_class=SensorDeviceClass.POWER,
+        state_class=SensorStateClass.MEASUREMENT,
+        value_fn=lambda c: c.telemetry.l2_power,
+    ),
+    VictronSensorDescription(
+        key="l3_power",
+        name="L3 Power",
+        native_unit_of_measurement=UnitOfPower.WATT,
+        device_class=SensorDeviceClass.POWER,
+        state_class=SensorStateClass.MEASUREMENT,
+        value_fn=lambda c: c.telemetry.l3_power,
+    ),
+    VictronSensorDescription(
         key="actual_charging_current",
         name="Actual Charging Current",
         native_unit_of_measurement=UnitOfElectricCurrent.AMPERE,
