@@ -55,8 +55,14 @@ class VictronDeviceInfo(Component):
         if self.fw_version_h is None or self.fw_version_l is None:
             return "Unknown"
         major = self.fw_version_h & 0xFF
-        minor = (self.fw_version_l >> 8) & 0xFF
+        # Minor is encoded in hex (e.g. 0x30 -> 30)
+        minor_raw = (self.fw_version_l >> 8) & 0xFF
         rev = self.fw_version_l & 0xFF
+
+        minor = f"{minor_raw:02x}" if minor_raw < 100 else f"{minor_raw}"
+
+        if rev in (0xFF, 0x00, 255):
+            return f"v{major}.{minor}"
         return f"v{major}.{minor}.{rev}"
 
     @property
