@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.vscode/
+.idea/
+*.log
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store

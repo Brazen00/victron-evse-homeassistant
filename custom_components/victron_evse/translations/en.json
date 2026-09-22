@@ -1,0 +1,22 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Victron EV Charging Station",
+        "description": "Enter the Modbus TCP network settings for your Victron EVCS.",
+        "data": {
+          "host": "IP Address / Hostname",
+          "port": "Port",
+          "unit_id": "Unit ID (Modbus Slave ID)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the EVCS over Modbus TCP. Check the IP and verify Modbus TCP is enabled in the web UI.",
+      "unknown": "An unexpected error occurred."
+    },
+    "abort": {
+      "already_configured": "This Victron EVCS is already configured."
+    }
+  }
+}
