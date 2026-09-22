@@ -54,7 +54,7 @@ class VictronEvseConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
         schema = vol.Schema(
             {
-                vol.Required(CONF_HOST, default="192.168.1.141"): str,
+                vol.Required(CONF_HOST): str,
                 vol.Required(CONF_PORT, default=DEFAULT_PORT): cv.port,
                 vol.Required(CONF_UNIT_ID, default=DEFAULT_UNIT_ID): cv.positive_int,
             }
