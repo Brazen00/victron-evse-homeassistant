@@ -13,11 +13,19 @@ Native Home Assistant integration for the **Victron Energy EV Charging Station (
   - Number: Dynamic Charging Current Limit (6 A - 32 A)
   - Sensors: Voltage, Power (L1, Total), Energy (Session, Total), Duration, and Status enums
 
-## Installation via HACS
-1. Ensure HACS is installed.
-2. Click the badge above, or navigate to **HACS** -> **Integrations** -> three dots (top right) -> **Custom repositories**.
-3. Add `https://github.com/Brazen00/victron-evse-homeassistant` with category **Integration**.
+## Installation
+
+### Standard Installation (Recommended)
+1. Ensure [HACS](https://hacs.xyz/) is installed.
+2. Go to **HACS** > **Integrations**.
+3. Search for `Victron EV Charging Station`.
 4. Click **Download**, then restart Home Assistant.
+
+### Manual / Custom Repository (Fallback)
+If it does not appear in search yet:
+1. Open **HACS** > **Integrations** > Three dots (top right) > **Custom repositories**.
+2. Add `https://github.com/Brazen00/victron-evse-homeassistant` with category `Integration`.
+3. Click **Download** and restart Home Assistant.
 
 ## Setup
 1. Enable **Modbus TCP** in your Victron EVCS web UI.
