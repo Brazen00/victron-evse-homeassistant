@@ -1,0 +1,89 @@
+name: Bug Report
+description: Create a report to help resolve a malfunction or error with the integration.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report an issue! 
+        Before submitting, please ensure your Victron EVCS has Modbus TCP enabled and that no other integration or script is saturating the connection.
+
+  - type: input
+    id: integration_version
+    attributes:
+      label: Integration Version
+      description: What version of victron-evse-homeassistant are you running? (e.g., v1.0.4)
+      placeholder: v1.0.4
+    validations:
+      required: true
+
+  - type: input
+    id: ha_version
+    attributes:
+      label: Home Assistant Version
+      description: Which version of Home Assistant Core/OS are you using? (e.g., 2026.10.1)
+      placeholder: 2026.10.x
+    validations:
+      required: true
+
+  - type: dropdown
+    id: hardware_model
+    attributes:
+      label: Victron EVCS Hardware Model
+      description: Select your charger model.
+      options:
+        - EV Charging Station (with screen)
+        - EV Charging Station NS (no screen)
+        - EV Charging Station Pro
+        - Other / Unknown
+    validations:
+      required: true
+
+  - type: input
+    id: firmware_version
+    attributes:
+      label: EVCS Firmware Version
+      description: Found in the Victron EVCS web UI under Settings > General (e.g., v1.28).
+      placeholder: v1.xx
+    validations:
+      required: false
+
+  - type: dropdown
+    id: connection_topology
+    attributes:
+      label: Connection Mode
+      description: How is Home Assistant communicating with the charger?
+      options:
+        - Direct Modbus TCP to EVCS IP
+        - Routed via GX / Cerbo device
+        - Unsure
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: Tell us what should have happened.
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_behavior
+    attributes:
+      label: Current Behavior
+      description: Tell us what actually happened (e.g., entities show Unavailable, config flow fails).
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Diagnostics / Relevant Logs
+      description: |
+        Please paste relevant Home Assistant error logs or diagnostics here.
+        Format terminal or traceback logs with triple backticks (```).
+      render: shell
+    validations:
+      required: false
